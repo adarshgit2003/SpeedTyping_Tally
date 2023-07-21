@@ -1,0 +1,62 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <title>SpeedTyping</title>
+        <link rel="icon" href="/img/favicon.png">
+        <link rel="stylesheet" href="/css/styles.min.css">
+    </head>
+    <body>
+        <div id="roomContainer">
+            <div id="leftPanel">
+                <div id="roomName" style="background-color: rgb(110, 110, 116);padding:5px;color:white;" ></div>
+                <hr>
+                <br>
+                <div id="allUsers" style="word-break: break-all;"></div>
+                <div id="scores" style="padding: 5px;        border-style: groove ;margin-top: 50px;display: flex;justify-content: center;flex-direction: column;width: 90%;">
+                    <div style="display: flex;"><b>My victories</b> <input  style="width:100px ;margin-left: auto;" disabled type="number" id="myWins"></div>
+                    <hr>
+                    <div style="display: flex;"><b>Opponent victories</b> <input style="width:100px ;margin-left: auto;" disabled type="number" id="opponentWins">
+                    </div>
+                </div>
+        <br>
+                
+            </div>
+            <div id="rightPanel">
+                <div id="winOrLose"></div>
+                <div id="progress">
+                    <div>
+                        <span>You</span> <progress id="myProgressBar" value="0" min="0" max="100"></progress>
+                    </div>
+                    <div>
+                        <span>Opponent</span>  <progress id="opponentProgressBar" value="0" min="0" max="100"></progress>
+                    </div>
+                </div>  
+        
+                <div id="thumbUpDown" style="font-size: 50px;height: 40px;margin-bottom: 40px;"></div>
+                <div id="testPara"></div>
+        
+                <div id="myTyping">
+                     <div id="liveTyping" style="display: none ;"></div>
+                    <textarea disabled  placeholder="type here.." name="" id="typingTextarea"  style="resize: vertical;width:100%;padding:5px;"></textarea>
+                </div>
+                <div>
+                    <button class="button" id="btn1"  onclick="startTest10()" style="width: 100px;">Cakewalk</button>
+                    <button class="button" id="btn2" onclick="startTest30()" style="width: 100px;">Easy</button>
+                    <button class="button" id="btn3" onclick="startTest50()" style="width: 100px;">Medium</button>
+                    <button class="button" id="btn4" onclick="startTest70()" style="width: 100px;">Hard</button>
+        
+                </div>
+                <div id="loadingGIF"  style="border-style: groove;color: rgb(8, 2, 43);font-weight: 900;background-color: rgb(255, 255, 255);vertical-align: middle;position:absolute;top: 20%;display: none;width: 300px;height: 300px;">
+                    <h1 style="margin-left: 70px;">Get ready!!</h1>
+                    <span style="margin-left: 100px; font-weight: 100;font-size:larger;" id="noOfWords"></span><br><br>
+                    <img src="https://media.tenor.com/G7LfW0O5qb8AAAAC/loading-gif.gif" width="200" height="150" alt="" style="margin-left: 50px;">
+                </div>
+            </div>
+        </div>
+        
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.11.0/qs.min.js" integrity="sha512-/l6vieC+YxaZywUhmqs++8uF9DeMvJE61ua5g+UK0TuHZ4TkTgB1Gm1n0NiA86uEOM9JJ6JUwyR0hboKO0fCng==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        
+        <script src="/js/typing.js"></script>
+    </body>
+</html>

@@ -138,14 +138,14 @@ const {username,room} = Qs.parse(location.search,{ignoreQueryPrefix:true})
         typingTextarea.disabled=true
         document.getElementById('winOrLose').innerHTML="<h1 style='color:black;font-weight:black;font-size:50px;'>You lose 😔</h1>"
     })
-
+    
     socket.on('win',()=>{
         myWinsCount++
         myWins.value=myWinsCount
         typingTextarea.disabled=true
         document.getElementById('winOrLose').innerHTML="<h1 style='color:black;font-weight:900;font-size:50px;'>You win 🥳</h1>"
     })
-    
+
     socket.on('disconnected',(msg)=>{
         opponentWins.value="0"
         myWins.value="0"

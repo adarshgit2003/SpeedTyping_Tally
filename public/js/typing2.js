@@ -36,13 +36,13 @@ const {username,room} = Qs.parse(location.search,{ignoreQueryPrefix:true})
     socket.on('updateRoomInfo',(roomInfo,userInRoom)=>{
        
         document.getElementById('roomName').innerHTML="<h1 style='margin-left: 100px;'>"+"Room:   "+roomInfo.room+"</h1>"
-        if(userInRoom.length==1)
+        // if(userInRoom.length==1)
         document.getElementById('allUsers').innerHTML="<br><fieldset style='background:lightgreen;'><h3 style='margin-left: 150px;'>"+userInRoom[0].username+"</h3></fieldset>"
-        else  {
-            if(userInRoom[0].id==socket.id)
-            document.getElementById('allUsers').innerHTML="<br><fieldset style='background:lightgreen;'><h3 style='margin-left: 150px;'>"+userInRoom[0].username+"</h3></fieldset><br><fieldset><h3 style='margin-left: 150px;'>"+userInRoom[1].username+"</h3></fieldset>"
-            else document.getElementById('allUsers').innerHTML="<br><fieldset ><h3 style='margin-left: 150px;'>"+userInRoom[0].username+"</h3></fieldset><br><fieldset style='background:lightgreen;'><h3 style='margin-left: 150px;'>"+userInRoom[1].username+"</h3></fieldset>"
-        }
+        // else  {
+            // if(userInRoom[0].id==socket.id)
+            // document.getElementById('allUsers').innerHTML="<br><fieldset style='background:lightgreen;'><h3 style='margin-left: 150px;'>"+userInRoom[0].username+"</h3></fieldset><br><fieldset><h3 style='margin-left: 150px;'>"+userInRoom[1].username+"</h3></fieldset>"
+            // else document.getElementById('allUsers').innerHTML="<br><fieldset ><h3 style='margin-left: 150px;'>"+userInRoom[0].username+"</h3></fieldset><br><fieldset style='background:lightgreen;'><h3 style='margin-left: 150px;'>"+userInRoom[1].username+"</h3></fieldset>"
+        // }
     })
 
     function startTest10(){
